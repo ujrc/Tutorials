@@ -1,0 +1,21 @@
+{% extends "__base.html" %}
+{% load staticfiles %}
+{% block title %}{{ blog.title }}{% endblock %}
+
+{% block content %}
+
+    <div id="posts">
+        {% for post in posts %}
+            <div class="post" data-post-id="{{ post.id }}">
+                <h2>{{ post.created|date:"D d M Y H:i" }}</h2>
+                {{ post.html_body }}
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
+
+
+{% block extra_js%}
+    <script src='{% static "posts/js/blog-post.js"%}'></script>
+{% endblock %}

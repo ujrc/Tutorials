@@ -1,0 +1,17 @@
+{% extends "__base.html" %}
+
+{% block head_title %}Channel Blog Example{% endblock %}
+
+{% block content %}
+
+    <p>Currently available blogs (make more in the <a href="/admin">admin</a>):</p>
+
+    {% for blog in blogs %}
+        <p>
+            <a href="{{ blog.get_absolute_url }}">{{ blog.title }}</a>
+        </p>
+    {% empty %}
+        <p class="empty">No blogs yet.</p>
+    {% endfor %}
+
+{% endblock %}

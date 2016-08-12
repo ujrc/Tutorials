@@ -1,0 +1,9 @@
+db.sqlite3
+Env
+.Env
+__pycache__
+*.DS_Store
+*.pyc
+htmlcov/
+.coverage
+*.py~
