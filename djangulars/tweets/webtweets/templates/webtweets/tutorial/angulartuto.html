@@ -1,0 +1,26 @@
+{% extends "__base.html" %} {% load staticfiles %} {% block title %} ng-learning {{ block.super }} {% endblock title %} {% block extra_css %}
+<link rel="stylesheet" href="{% static '/webtweets/css/tuto.css' %}"> {% endblock extra_css %} {% block content %}
+<div ng-app="ngTuto" ng-controller="tutoCtrl">
+    <div class="container">
+    <div class=" price-form col-sm-12 ">
+        {% include "webtweets/tutorial/price_filter.html" %}
+        </div>
+        {% include "webtweets/tutorial/place_detail.html" %}
+
+    </div>
+</div>
+<!--<div ng-app="ngTuto" ng-controller="tutoCtrl">
+
+{# <button ng-click="sayHello()">Say Hello</button> #}
+<button ng-click="showMessage=!showMessage">Toggle Mesaage</button>
+{# <button ng-click="showMessage=fasle">Hide Mesaage</button> #}
+<h2 ng-show="showMessage==true">Secret message</h2>
+
+  <div class="well" ng-repeat="place in places">
+    <h3>[[place.address]]</h3>
+    <p><label for="">Type:</label><strong>[[place.type]]</strong></p>
+    <p><label for="">Price:</label><strong>[[place.price|currency]]</strong></p>
+    <p><label for="">Description:</label><strong>[[place.description]]</strong></p>
+  </div> -->
+<!-- <pre>[[places | json]]</pre> #}-->
+{% endblock content %} {% block extra_js %} {% include "webtweets/tutorial/tuto_js.html" %} {% endblock extra_js %}

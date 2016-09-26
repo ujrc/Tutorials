@@ -1,0 +1,13 @@
+<div>
+    <div><a href="/">Back to search</a></div>
+    Forecast for [[city]]
+    <div>Days: <a href="/forecast/2" ng-class="{'bg-primary':days==='2'}">2</a>|<a href="/forecast/5" ng-class="{'bg-primary':days==='5'}">5</a>|<a href="/forecast/7" ng-class="{'bg-primary':days==='7'}">7</a>
+    </div>
+    <div ng-repeat="wea in weatherAPIResult.list">
+        <div class="row">
+            <div class="col-sm-12">
+            <weather-report weather-day="wea" convert-to-standard="converttoFahrenheit(datetimeTemp)" convert-to-date="convertToDate(dt)" date-format="EEE MMM dd,y"></weather-report>
+            </div>
+        </div>
+    </div>
+</div>

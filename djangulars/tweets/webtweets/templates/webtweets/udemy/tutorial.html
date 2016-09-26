@@ -1,0 +1,64 @@
+{% extends "__base.html" %} {% load staticfiles %} {% block title %} Learning {{ block.super }} {% endblock title %}
+{% block ngapp %}myTutorial{% endblock %}
+
+{% block content %}
+<div class="container" ng-app= ng-cloak>
+    <div class="row">
+        <div class="col-sm-5">
+            <div ng-controller="MainCtrl">
+                <h1>Hello [[name]]</h1>
+                <!--Directives-->
+                <div>
+                    <label for="">What is your tweeter handle:</label>
+                    <input type="text" ng-model="handle">
+                </div>
+                <hr>
+                <!--{# ngIf remove the DOM when the condition is true #}
+    <div class="alert" ng-if="handle.length!==characters">Must be 5 characters:</div>-->
+                <!--ngShow or ngHide change the class in the DOM when the condition is true-->
+                <div class="alert" ng-show="handle.length!==characters" ng-class="{'alert-warning':handle.length < characters,'alert-danger':handle.length>characters}">
+                    <div ng-show="handle.length<characters">
+                        You have less than 5 chacters!
+                    </div>
+                    <div ng-show="handle.length>characters">You have more than 5 characters!</div>
+                </div>
+                <h1>tweeter.com/[[lowerCasehandle()]]</h1>
+                <h2>Rules</h2>
+                <ul>
+                    <li ng-repeat="rule in rules"> [[rule.ruleName]]</li>
+                </ul>
+                <input type="button" value="Click me" ng-click="alertClick()">
+                <!--  
+        [[understand]] <br>
+        {# <input type="text" ng-model='inputValue'> [[inputValue]] #}
+        <select name="" id="" ng-model="selectPerson" ng-options="obj.name for obj in people"></select>
+        <select name="" id=""ng-model="selectGenre">
+            <option value="" ng-repeat="label in people[selectPerson.id].music">[[label]]</option>
+        </select>
+       <div>
+           <input type="text" ng-model="SearchText">
+           <ul class="list-group">
+               <li class="list-group-item" ng-repeat='singer in singers|filter:SearchText' ng-show='singer.live==true'>#[[singer.id]]&nbsp;[[singer.name]]</li>
+           </ul>
+
+<ol >
+   <li ng-repeat='singer in singers|filter:SearchText' ng-hide='singer.live==false'>#[[singer.id]]&nbsp;[[singer.name]]</li>
+</ol>
+
+       </div>
+            <input type="text" ng-model="newPerson">
+            <button type="button" ng-click="addNew()">Add</button> -->
+            </div>
+        </div>
+        <div class="col-sm-5 col-sm-offset-2" ng-controller="secondCtrl">
+            {% include "webtweets/udemy/mainPage.html" %}
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-sm-4" ng-controller="spaController">
+            {% include "webtweets/udemy/spApp.html" %}
+        </div>
+    </div>
+</div>
+{% endblock content %} {%block extra_js%} {% include "webtweets/udemy/js.html" %} {%endblock%}
