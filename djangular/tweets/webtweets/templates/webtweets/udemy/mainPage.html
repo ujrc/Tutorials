@@ -1,0 +1,11 @@
+
+
+    <h1>Tweets</h1>
+    <ul class="list-group">
+      
+      <li class="list-group-item" ng-repeat="tweet in tweets">[[tweet.user]] <br>[[tweet.text]] <br>
+      [[tweet.timestamp|date:"EEE MMM dd yy hh:mm:ss a"]]</li>
+    </ul>
+    <p>User:<input type="text" ng-model="user"></p>
+<p>Text: <input type="text" ng-model="newTweet"><a class="btn btn-primary" href="" ng-click="addTweet()">Add</a></p>
+

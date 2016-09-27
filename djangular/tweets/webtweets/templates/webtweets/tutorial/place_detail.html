@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="col-sm-4" ng-repeat="place in places|tutoFilters:priceInfo | orderBy:'-id'">
+        <div class="thumbnail">
+            <img ng-src="/static/webtweets/images/[[place.image]].jpg" alt="">
+            <div class="caption">
+                <div ng-hide="showDetails === true">
+                    <h3><i class="glyphicon glyphicon-tag"></i> [[place.price | currency]]</h3>
+                    <h4><i class="glyphicon glyphicon-home"></i> [[place.address]]
+                    <span class="label label-primary label-sm">[[place.type]]</span>
+                    </h4>
+                </div>
+                <button class="btn btn-xs btn-success" ng-hide="showDetails === true" ng-click="showDetails = !showDetails">
+                    Details
+                </button>
+                <!--Edit button-->
+                <button class="btn btn-xs btn-primary" ng-show="showDetails === true" ng-click="editPlace(place)">Edit</button>
+                
+                <button class="btn btn-xs btn-danger" ng-show="showDetails === true" ng-click="showDetails = !showDetails">
+                    Close
+                </button>
+                <div class="details" ng-show="showDetails === true">
+                    <h4>
+                    <span class="label label-primary">Beds:[[place.details. bedrooms]]</span>
+                    <span class="label label-primary">Baths:[[place.details.bathrooms]]</span>
+                    <span class="label label-primary">SqFt: [[place.details.area]]</span>
+                  </h4>
+                    <p>[[place.description]]</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+{% extends "__base.html" %}  
+
+{% block title %}ng Book{% endblock title %}  
+{% block content %}
+
+<div ng-app='bookApp' ng-controller="bookController">
+<div class="container">
+    [[clock|date:'EEE MMM dd,yy hh:mm:ss a']] <br>
+    [[message]]
+    <button ng-click="add(3)" class="btn btn-default">Add</button>
+    <a ng-click="substract(2)" href="" class="btn btn-alert">Substract</a>
+    Current Counter: [[counter]]
+</div>
+</div>
+    
+{% endblock content %}
+{% block extra_js %}{% include "webtweets/ngBook/js.html" %}{% endblock extra_js %}

@@ -1,0 +1,23 @@
+{% extends "rest_framework/base.html" %}
+{% load static %}
+{% block title %}DRF ANGULAR |{{ block.super }} {% endblock title %}
+{% block branding %}DRF ANGULAR{% endblock branding %}
+{% block body %} {{ block.super }}
+{% block bootstrap_theme %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/navbar.css'%}" type="text/css">
+{% endblock %}
+{% block content %}
+  Hello !!
+{% endblock content %}
+
+
+<script src="{% static 'js/node_modules/angular/angular.min.js' %}"></script>
+<script src='//ajax.googleapis.com/ajax/libs/angularjs/X.Y.Z/angular-resource.js'></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/X.Y.Z/angular-route.js"></script>
+<script src="{% static 'js/node_modules/angular-route/angular-ui-route.min.js' %}"></script>
+<script src="{% static 'webtweets/js/app/app.js' %}"></script>
+<script src="{% static 'webtweets/js/app/controllers.js' %}"></script>
+<script src="{% static 'webtweets/js/app/services.js' %}"></script>
+<script src="{% static 'webtweets/js/app/tweets.js' %}"></script>
+ {% endblock %}

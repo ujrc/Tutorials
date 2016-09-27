@@ -1,0 +1,61 @@
+<button class="btn btn-primary" ng-click="addListing = !addListing" ng-show="!addListing && !editListing">Add Listing</button>
+<button class="btn btn-danger" ng-click="addListing = !addListing" ng-show="addListing">Close</button>
+<div class="listing-form" ng-if='addListing'>
+    <h3>Add Listing</h3>
+    <div class=" row listing-form-row">
+        <div class="col-sm-4">
+            <div class="input-group">
+                <span class="input-group-addon">Address</span>
+                <input type="text" placeholder="Enter the address" class="form-control" ng-model="newListing.address">
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="input-group">
+                <span class="input-group-addon">Price</span>
+                <input type="text" placeholder="Enter the price" class="form-control" ng-model="newListing.price">
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="input-group">
+                <select type="select" name="propertyType" id="propertyType" class="form-control" ng-model="newListing.type">
+                    <option value="House">House</option>
+                    <option value="Condo">Condo</option>
+                    <option value="Duplex">Duplex</option>
+                    <option value="Apprtment">Appartment</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row listing-form-row">
+        <div class="col-sm-4">
+            <div class="input-group">
+                <span class="input-group-addon">Description</span>
+                <textarea name="description" id="description" cols="30" rows="2" type="text" placeholder="Enter the description" class="form-control" ng-model="newListing.description"></textarea>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="col-sm-4">
+                <div class="input-group">
+                    <span class="input-group-addon">Beds</span>
+                    <input type="text" placeholder="Bedrooms" class="form-control" ng-model="newListing.details.bedrooms">
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="input-group">
+                    <span class="input-group-addon">Baths</span>
+                    <input type="text" placeholder="Bathrooms" class="form-control" ng-model="newListing.details.bathrooms">
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="input-group">
+                    <span class="input-group-addon">SqFt</span>
+                    <input type="text" placeholder="Square Footage" class="form-control" ng-model="newListing.details.area">
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-primary listing-button" ng-click="addPlace(newListing)" ng-show="addListing">Add</button>
+    <pre>[[newListing | json]]</pre>
+</div>
+{% include "webtweets/tutorial/edit_place.html" %}
+</div>

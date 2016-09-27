@@ -1,0 +1,17 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+    </div>
+    <div class="panel-title"> </div>
+    <!-- [[wea]] -->
+    <h3>[[convertToDate({dt:weatherDay.dt})|date:dateFormat]]</h3>
+    <div class="panel-body">
+        <ul class="list-group">
+            Temperature
+            <br>
+            <li class="list-group-item">Daytime :[[convertToStandard({datetimeTemp:weatherDay.temp.day})]]&#8457;</li>
+            <li class="list-group-item">Night:[[convertToStandard({datetimeTemp:weatherDay.temp.night})]]&#8457;</li>
+            <li class="list-group-item">Max:[[convertToStandard({datetimeTemp:weatherDay.temp.max})]]&#8457;</li>
+            <li class="list-group-item">Min:[[convertToStandard({datetimeTemp:weatherDay.temp.min})]]&#8457;</li>
+        </ul>
+    </div>
+</div>
