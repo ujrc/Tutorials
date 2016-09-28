@@ -1,0 +1,146 @@
+{
+  "message": "accurate",
+  "cod": "200",
+  "count": 4,
+  "list": [
+    {
+      "id": 2643743,
+      "name": "London",
+      "coord": {
+        "lon": -0.12574,
+        "lat": 51.50853
+      },
+      "main": {
+        "temp": 291.37,
+        "pressure": 1010,
+        "temp_min": 290.37,
+        "temp_max": 293.15,
+        "humidity": 74
+      },
+      "dt": 1474769150,
+      "wind": {
+        "speed": 3.41,
+        "deg": 182.002
+      },
+      "sys": {
+        "country": "GB"
+      },
+      "clouds": {
+        "all": 64
+      },
+      "weather": [
+        {
+          "id": 803,
+          "main": "Clouds",
+          "description": "broken clouds",
+          "icon": "04n"
+        }
+      ]
+    },
+    {
+      "id": 6058560,
+      "name": "London",
+      "coord": {
+        "lon": -81.23304,
+        "lat": 42.983391
+      },
+      "main": {
+        "temp": 284.82,
+        "humidity": 67,
+        "pressure": 989,
+        "temp_min": 284.82,
+        "temp_max": 284.82
+      },
+      "dt": 1474769045,
+      "wind": {
+        "speed": 3.56,
+        "deg": 62.5024
+      },
+      "sys": {
+        "country": "CA"
+      },
+      "clouds": {
+        "all": 0
+      },
+      "weather": [
+        {
+          "id": 800,
+          "main": "Clear",
+          "description": "Sky is Clear",
+          "icon": "01n"
+        }
+      ]
+    },
+    {
+      "id": 4298960,
+      "name": "London",
+      "coord": {
+        "lon": -84.08326,
+        "lat": 37.128979
+      },
+      "main": {
+        "temp": 293.786,
+        "temp_min": 293.786,
+        "temp_max": 293.786,
+        "pressure": 990.67,
+        "sea_level": 1031.64,
+        "grnd_level": 990.67,
+        "humidity": 85
+      },
+      "dt": 1474769150,
+      "wind": {
+        "speed": 0.96,
+        "deg": 78.0024
+      },
+      "sys": {
+        "country": "US"
+      },
+      "clouds": {
+        "all": 0
+      },
+      "weather": [
+        {
+          "id": 800,
+          "main": "Clear",
+          "description": "Sky is Clear",
+          "icon": "01n"
+        }
+      ]
+    },
+    {
+      "id": 4517009,
+      "name": "London",
+      "coord": {
+        "lon": -83.44825,
+        "lat": 39.886452
+      },
+      "main": {
+        "temp": 292.96,
+        "pressure": 1020,
+        "temp_min": 292.04,
+        "temp_max": 293.71,
+        "humidity": 51
+      },
+      "dt": 1474769075,
+      "wind": {
+        "speed": 1.03,
+        "gust": 3.08,
+        "deg": 46
+      },
+      "sys": {
+        "country": "US"
+      },
+      "clouds": {
+        "all": 0
+      },
+      "weather": [
+        {
+          "id": 800,
+          "main": "Clear",
+          "description": "Sky is Clear",
+          "icon": "01n"
+        }
+      ]
+    }
+  ]
+}

@@ -4,6 +4,7 @@ app.controller('homeController', ["$scope", "$location", "cityService",
         $scope.$watch("city", function() {
             cityService.city = $scope.city;
         });
+
         $scope.submit = function() {
             $location.path("/forecast");
         }
@@ -14,6 +15,7 @@ app.controller("forecastController", ["$scope", "$routeParams", "$http", "citySe
     function($scope, $routeParams, $http, cityService, weatherService) {
         $scope.city = cityService.city;
         $scope.days = $routeParams.days || 2;
+
 
         $scope.apiKey = $http.get('/static/webtweets/js/weather/config.json')
             .then(function(response) {
@@ -27,6 +29,7 @@ app.controller("forecastController", ["$scope", "$routeParams", "$http", "citySe
         $scope.convertToDate = function(dt) {
             return new Date(dt * 1000);
         };
+
     }
 ]);
 
@@ -45,3 +48,4 @@ app.controller("searchController", ["$scope", "searchFactory", function($scope, 
         });
     };
 }]);
+

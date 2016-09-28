@@ -8,8 +8,8 @@ app.directive("weatherReport",function(){
             convertToStandard:"&",
             convertToDate:"&",
             dateFormat:"@"
-
         }
     }
 
 });
+

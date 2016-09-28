@@ -1,0 +1,12 @@
+
+body{
+    background-color: #636563;
+   color: white;
+}
+.navbar-inverse {
+    background: #084D45;
+    color: white;
+    border: none;
+    border-top: 5px solid #104B4B;
+}
+}

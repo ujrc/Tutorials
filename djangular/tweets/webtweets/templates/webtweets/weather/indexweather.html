@@ -1,0 +1,17 @@
+{% extends "__base.html" %} {% load staticfiles %} {% block title %}Angularjs SPA{% endblock title %} {% block ngapp %}weatherApp{% endblock ngapp %} {% block content %}
+<div class="container">
+    <div ng-view>
+    </div>
+</div>
+{% endblock content %} {% block extra_js %}
+<script type="text/javascript" src="https://code.angularjs.org/1.5.8/angular.min.js"></script>
+<script type="text/javascript" src="https://code.angularjs.org/1.5.8/angular-route.min.js"></script>
+<script type="text/javascript" src="https://code.angularjs.org/1.5.8/angular-resource.min.js"></script>
+<script type="text/javascript" src="{% static 'webtweets/js/weather/djangularApp.js' %}"></script>
+<script type="text/javascript" src="{% static 'webtweets/js/weather/weatherCtrl.js' %}"></script>
+<script type="text/javascript" src="{% static 'webtweets/js/weather/configure.js' %}"></script>
+<script type="text/javascript" src="{% static 'webtweets/js/weather/weatherService.js' %}"></script>
+<script type="text/javascript" src="{% static 'webtweets/js/weather/weatherDirective.js' %}"></script>
+<!--
+<script type="text/javascript" src=""></script> -->
+{% endblock extra_js %}
