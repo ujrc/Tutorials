@@ -1,0 +1,12 @@
+__pycache__
+*.pyc
+*.py~
+*.txt
+*.woff
+*.eot
+*.woff2
+*.ttf
+*.svg
+db.sqlite3
+static_cdn
+api.json

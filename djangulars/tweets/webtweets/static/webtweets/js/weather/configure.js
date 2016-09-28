@@ -16,5 +16,9 @@ app.config(function($routeProvider, $locationProvider,$interpolateProvider, $htt
         }).when('/forecast/:days', { // If URL is at /, uses template at
             templateUrl: '/static/pages/weather/forecast.html', // this location
             controller: 'forecastController' // and apply instructions from this controller
+        })
+        .when('/typehead/', { // If URL is at /, uses template at
+            templateUrl: '/static/pages/weather/type_head.html', // this location
+            controller: 'searchController' // and apply instructions from this controller
         });
 });

@@ -1,32 +1,47 @@
-app.controller('homeController', ["$scope", "$location","cityService",
-    function($scope,$location, cityService) {
+app.controller('homeController', ["$scope", "$location", "cityService",
+    function($scope, $location, cityService) {
         $scope.city = cityService.city;
-        $scope.$watch("city",function(){
-        cityService.city=$scope.city;
+        $scope.$watch("city", function() {
+            cityService.city = $scope.city;
         });
-    
-    $scope.submit=function() {
-        $location.path("/forecast");
-    }
-    }]);
-
-app.controller("forecastController", ["$scope","$resource","$routeParams","cityService",
-    function($scope,$resource,$routeParams,cityService) {
-        $scope.city = cityService.city;
-        $scope.days=$routeParams.days || 2;
-        $scope.weatherAPI=$resource("http://api.openweathermap.org/data/2.5/forecast/daily",{
-            callback:"JSON_CALLBACK"},{get:{method:"JSONP"}});
-        
-        $scope.apiKey="b1591813e0b2b090b07426643c217193";//default key
-        // anotherKey='d9b8cbf7dfd2da7669dc3468a899a3b1'//weatherKey
-        $scope.weatherAPIResult=$scope.weatherAPI.get({q:$scope.city,cnt:$scope.days,appid:$scope.apiKey});
-        $scope.converttoFahrenheit=function(degKv) {
-            return Math.round((1.8*(degKv-273))+32);
+        $scope.submit = function() {
+            $location.path("/forecast");
         }
-        $scope.convertToDate=function(dt)
-        {
+    }
+]);
 
-        return  new Date(dt*1000);
+app.controller("forecastController", ["$scope", "$routeParams", "$http", "cityService", "weatherService",
+    function($scope, $routeParams, $http, cityService, weatherService) {
+        $scope.city = cityService.city;
+        $scope.days = $routeParams.days || 2;
+
+        $scope.apiKey = $http.get('/static/webtweets/js/weather/config.json')
+            .then(function(response) {
+                return response.data;
+            });
+    console.log($scope.apiKey);
+       $scope.weatherAPIResult = weatherService.GetWeather($scope.city, $scope.days, $scope.apiKey);
+        $scope.converttoFahrenheit = function(degKv) {
+            return Math.round((1.8 * (degKv - 273)) + 32);
+        }
+        $scope.convertToDate = function(dt) {
+            return new Date(dt * 1000);
         };
-    }]);
+    }
+]);
 
+
+app.controller("searchController", ["$scope", "searchFactory", function($scope, searchFactory) {
+
+    $scope.a = "This is  Type head page";
+    $scope.search = function(searchParam) {
+        searchFactory.get({
+
+        }, function(data) {
+            $scope.data = data;
+        }, function(error) {
+            console.error("The error occured while calling the search factory: ");
+            console.error(error);
+        });
+    };
+}]);
