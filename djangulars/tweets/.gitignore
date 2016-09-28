@@ -9,4 +9,4 @@ __pycache__
 *.svg
 db.sqlite3
 static_cdn
-api.json
+config.json
